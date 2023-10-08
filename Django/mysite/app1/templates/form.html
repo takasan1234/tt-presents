@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <h1>Create New Contact2</h1>
+
+    {% if latest_question_list %}
+        <ul>
+        {% for question in latest_question_list %}
+            <li><a href="{% url 'detail' question.id %}">{{ question.question_text }}</a></li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No polls are available.</p>
+    {% endif %} -->
+
+
+
+
+<!-- 以下のコードは申込フォームのためのものです -->
+    <h1 style="font-size: 26px;">ハイパーバーベキュー大会<br>申込フォーム</h1>
+    
+    <p>以下の登録は、システム的に取り消せません。慎重によろしくお願いします。<br>万が一、誤った情報を登録した場合は、公式インスタグラムアカウント（@tsujitakapresents）までご連絡ください。</p>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">投稿する</button>
+    </form>
+    <style>
+        body{
+            margin:30px;
+        }
+        ul{
+            color:red;
+        }
+    </style>
+</body>
+</html>
