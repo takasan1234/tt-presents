@@ -21,4 +21,5 @@ class Contact(models.Model):
     contact_message = models.TextField()
     contact_time = models.DateTimeField()
 
-    
+
+

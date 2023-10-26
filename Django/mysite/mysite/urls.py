@@ -21,6 +21,7 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     # /polls/ という URL がリクエストされたら polls/urls.py を参照するよう指定
     path("app1/", include("app1.urls")),
+    path('polls/', include("polls.urls"))
     
 ]
 

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>Polls アプリケーション</title>
+</head>
+<body>
+    <h1 style="font-size: 32px;">投票に成功しました！</h1>
+    <h1 style="font-size: 18px;">{{ question.question_text }}</h1>
+        <ul>
+        {% for choice in question.choice_set.all %}
+            <li>{{ choice.choice_text }}:{{ choice.votes }} 票</li>
+        {% endfor %}
+        {% for sum in question.sum_set.all %}
+            <p>現在、14人中 <span style="font-size: 150%;">{{ sum.sum_votes }}</span> 人が投票済みです。</p>
+            <p>戻って２票投票しないでください。</p>
+        {% endfor %}
+        
+        </ul>        
+    </body>
+    <script>
+        const timer = 1000    // ミリ秒で間隔の時間を指定
+        window.addEventListener('load',function(){
+        setInterval('location.reload()',timer);
+        });
+    </script>
+</html>

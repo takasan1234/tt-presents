@@ -33,13 +33,14 @@
                 <p class="text">T.T.presents</p>
                 <p class="text" id="title_under">ハイパーバーベキュー大会</p>
                 <p class="text" id="date">2023.10.28　＠服部緑地公園</p>
+                <p class="text" id="date">12時～16時　開催予定</p>
             </span>
         </div>
-        
+
         <div class="form_link">
-            <a href="http://127.0.0.1:8000/app1/contact/" target="_blank" rel="noopener noreferrer" data-text="申し込みはこちら">申し込みはこちら</a>
+            <a href="https://takaya.pythonanywhere.com/app1/contact/" target="_blank" rel="noopener noreferrer" data-text="申し込みはこちら">申し込みはこちら</a>
         </div>
-        
+
         <div class="main_box1 scroll_appear" id="main_box1">
             <h1>大会概要</h1>
             <br>
@@ -60,8 +61,11 @@
                 逆に、知り合いであれば、どなたでも大歓迎なので、迷っている方はぜひご参加ください。</p>
             <br><br>
             <h2>キャンセルについて</h2>
-            <p>大会申込後のキャンセルは可能ですが、その際には、食費を除く、用意したバーベキューの機材等の費用を支払っていただく形になります。ですので、予約の際は、他の予定と被らないように慎重にお願いします。万が一、キャンセルをご希望の場合は、本大会公式インスタグラムアカウント（@tsujitakapresents）まで直接ご連絡ください。</p>
+            <p>予約の際は、他の予定と被らないように慎重にお願いします。万が一、キャンセルをご希望の場合は、本大会公式インスタグラムアカウント（@tsujitakapresents）まで直接ご連絡ください。10月20日まででしたら、無料キャンセルで対応します。それ以降は、100％払っていただきますので、ご理解よろしくお願いいたします。</p>
             <br><br>
+            <h2>飲酒について</h2>
+            <p>20歳以上の方のみ自己責任で、飲酒できます。<br>
+            <span class="text-progress" data-text="ただし、お酒はこちらでは用意できませんので、個人で用意し、">ただし、お酒はこちらでは用意できませんので、個人で用意し、</span>持ち込んで下さい。</p><br>
             <h2>その他</h2>
             <p>上記の内容については、大会を円滑に進めるため、変更する場合があります。変更内容については、ホームページを随時更新し、重要な内容に関しては、連絡させていただきます。あらかじめご了承ください。</p>
             <br><br><br><br><br>
@@ -71,7 +75,7 @@
                 <img src="/media/img/現地の写真/S__7151619.jpg">
             </div>
         </div>
-        
+
         <br><br><br>
         <div class="hyper_former scroll_appear">
             <h1>前回のテニスシングルス大会の様子</h1>
@@ -83,7 +87,7 @@
                         <img src="/media/img/MLYP1204.JPG" width="400px" class="slide_img" id="slide3">
                         <img src="/media/img/JMEM4023.JPG" width="400px" class="slide_img" id="slide4">
                     </div>
-                </div>  
+                </div>
         </div>
         <br><br><br>
         <div class="main_box2 scroll_appear" id="main_box2">
@@ -133,6 +137,7 @@
                 <p class="text">T.T.presents</p>
                 <p class="text" id="foot_title_under">ハイパーバーベキュー大会</p>
                 <p class="text" id="foot_date">2023.10.28　＠服部緑地公園</p>
+                <p class="text">12時～16時　開催予定</p>
             </span>
         </div>
         <div class="foot_links">
@@ -141,9 +146,9 @@
             <a href="https://www.instagram.com/tsujitakapresents/" id="insta_logo" target="_blank" rel="noopener noreferrer"><img src="/media/img/insta_logo/Instagram_Glyph_White.png"></a>
         </div>
         <div class="form_link">
-            <a href="http://127.0.0.1:8000/app1/contact/" target="_blank" rel="noopener noreferrer" data-text="申し込みはこちら">申し込みはこちら</a>
+            <a href="https://takaya.pythonanywhere.com/app1/contact/" target="_blank" rel="noopener noreferrer" data-text="申し込みはこちら">申し込みはこちら</a>
         </div>
-        
+
     </div>
     <footer>©️ All rights reserved.</footer>
     <script>
@@ -160,14 +165,15 @@
         const elementDistance2 = textProgress[2].getBoundingClientRect().top;
         const elementDistance3 = textProgress[3].getBoundingClientRect().top;
         const elementDistance4 = textProgress[4].getBoundingClientRect().top;
+        const elementDistance5 = textProgress[5].getBoundingClientRect().top;
 
 
 
         // 初回アクセス時のみのエフェクト作成関連
         const sessionKey="accesed"
-        
+
         if(!sessionStorage.getItem("accesed")){
-            
+
             // 初回アクセス時のみの処理
             hello[0].classList.add("active");
             topAppear[0].classList.add("fst_load");
@@ -200,29 +206,32 @@
                 scrollChange[0].classList.remove("active");
             }
 
-            
+
             // 緑に出てくる
-            
+
             let yy = window.scrollY;
-            
+
             if((elementDistance0) - windowHeight *(1)+ 20 <= yy){
                 textProgress[0].classList.add("progress");
             }
             if((elementDistance1 - windowHeight*(1)) <= yy){
                 textProgress[1].classList.add("progress");
             }
-            
+
             if((elementDistance2 - windowHeight*(1)) <= yy){
                 textProgress[2].classList.add("progress");
             }
-            
+
             if((elementDistance3 - windowHeight*(1)) <= yy){
                 textProgress[3].classList.add("progress");
             }
             if((elementDistance4 - windowHeight*(1)) <= yy){
                 textProgress[4].classList.add("progress");
             }
-            
+            if((elementDistance4 - windowHeight*(1)) <= yy){
+                textProgress[5].classList.add("progress");
+            }
+
         });
 
         for(let index=0 ; index < scrollAppear.length; index++){
@@ -237,13 +246,13 @@
                 }
             });
         }
-        
-            
 
 
-        
 
-        
+
+
+
+
         // じゅんの顔エフェクト（旧型）
         // window.addEventListener("load", () => {
         //     hello[0].classList.add("active");
@@ -258,7 +267,7 @@
         //     },8000)
         // });
 
-        
+
 
     </script>
 </body>
